@@ -1,0 +1,55 @@
+
+a::after {
+    content: "\1D508"; /* 𝔈 MATHEMATICAL FRAKTUR CAPITAL E */
+    background-image: none;
+    display: inline;
+    margin: 0 0 0 2px;
+    vertical-align: baseline;
+    position: relative;
+    bottom: 0.15em;
+    opacity: 0.75;
+    font-size: 0.9em;
+    font-style: normal;
+    font-weight: normal;
+}
+
+#page-metadata a.link-local::after {
+    content: none;
+}
+
+body.index a.link-local::after {
+    content: none;
+}
+
+a[href*="arxiv.org"]::after,
+a[href*="psyarxiv.com"]::after,
+a[href*="dev.to"]::after {
+    font-size: 0.75em;
+    font-weight: 600;
+    font-style: normal;
+    margin: 0 0 0 2px;
+    vertical-align: baseline;
+    position: relative;
+    bottom: 0.25em;
+    opacity: 0.83;
+    padding: 0;
+    background-image: none;
+    background-size: unset;
+}
+
+a[href*="arxiv.org"]::after,
+a[href$="arxiv.org/pdf/.*\.pdf#page=.*"]::after {
+    content: "\1D6D8"; /* (𝛘) MATHEMATICAL BOLD SMALL CHI; bold makes it show up better when tiny */
+    opacity: 0.75;
+    bottom: 0.4em;
+    background-image: none;
+}
+
+a[href*="dev.to"]::after {
+    content: "DEV";
+}
+
+a, a:visited {
+	color: black;
+  font-size: 18px;
+}
