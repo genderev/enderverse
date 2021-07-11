@@ -48,7 +48,7 @@ let display = (linkGraph) => {
   if (inboundLinks) {
     for (const item in inboundLinks) {
       let p = document.createElement("p");
-      p.innerHTML = `&#x2734; Referenced in <a href="${inboundLinks[item][1]}">${inboundLinks[item][0]}</a><iframe src="${inboundLinks[item][1]}" loading="lazy" class="hover" width="50%" height="100%"></iframe>`;
+      p.innerHTML = `&#x2734; Referenced in <a href="${inboundLinks[item][1]}">${inboundLinks[item][0]}</a><embed src="${inboundLinks[item][1]}" class='hover' height='500em'>`;
       document.getElementById("editme").append(p);
     }
   } else {
@@ -71,5 +71,3 @@ if (links) {
   let storage = JSON.stringify(Array.from(linkGraph.entries())); //stringify our work for the browser
   localStorage.setItem("backlinks", storage); //save our work for later
 }
-
-document.querySelector("button").style.display = "none";
