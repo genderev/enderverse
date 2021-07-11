@@ -6,8 +6,11 @@
   transform: scale(0.6) translate(-0%, -150%);
 }
 
+@media only screen and (min-width: 768px) {
+    /* For desktop: */
 a:hover + .hover {
   display: block;
+}
 }
 
 a, a:visited {
