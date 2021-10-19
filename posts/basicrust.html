@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><title> basic rust </title>
+<link rel="stylesheet" type="text/css" href="../css/latex.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+
+<h2> notes on basic rust </h2>
+
+<p> I actually talked to one of the authors of the official Rust book and he was pretty nice.
+  That being said, I found the book hard to get through. If I knew anyone trying to learn Rust, I would recommend Easy Rust to them instead. </p>
+
+
+<p> I've seen a lot of articles or posts like the one I'm about to begin - code snippets of Rust with notes in the comments.
+  What I didn't understand before is that you don't learn Rust by reading someone else's notes, but by writing your own.
+</p>
+<iframe  src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=material&wt=none&l=rust&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14px&lh=133%25&si=false&es=2x&wm=false&code=fn%2520types%28%29%257B%250A%2520%2520let%2520example_number%253A%2520u8%2520%253D%2520100%253B%2520%252F%252F%2520a%2520u8%2520stores%25208%2520bits.%2520%250A%2520%2520%252F%252F%2520u8%2520can%2520go%2520up%2520to%2520255%250A%2520%2520%252F%252F%2520the%2520u%2520in%2520u8%2520stands%2520for%2520unsigned%250A%2520%2520let%2520other_example%253A%2520usize%2520%253D%2520100%253B%250A%2520%2520%252F%252F%2520usize%2520means%2520use%252064%2520bits%2520if%2520the%2520OS%2520isn%27t%252032-bit%2520%250A%2520%2520println%21%28%2522%257B%257D%2522%252C%2520other_example%2520as%2520u8%29%253B%250A%2520%2520%252F%252F%2520as%2520casts%2520types%2520from%2520one%2520kind%2520to%2520another%250A%257D"  style="width: 100%; height: 354px; border:0; transform: scale(1); overflow:hidden;"  sandbox="allow-scripts allow-same-origin"></iframe>
+
+<p> Until now, I didn't understand how to put variables in the middle of a string. This frustrated me so much when I was working on Mind Garden. </p>
+
+<iframe  src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=material&wt=none&l=rust&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14px&lh=133%25&si=false&es=2x&wm=false&code=fn%2520print_placement%28%29%257B%250A%2520%2520let%2520variable_name%253A%2520usize%2520%253D%2520100%253B%250A%2520%2520println%21%28%2522I%2520want%2520to%2520eat%2520%257B%257D%2520pancakes%21%2522%252C%2520variable_name%29%253B%250A%257D"  style="width: 100%; height: 260px; border:0; transform: scale(1); overflow:hidden;"  sandbox="allow-scripts allow-same-origin"></iframe>
+
+<p>
+
+In C, you need to manually allocate memory on the heap with <code>malloc</code> and <code>free</code>. If you forget to call <code>free</code> on memory you previously allocated with <code>malloc</code>, you get a memory leak and the memory will remain allocated until the program stops running. Memory leaks are easy to cause in C and pretty difficult to stumble upon in Rust.
+
+</p>
+<footer id="editme"></footer>
+<script src="../js/backlinks.js"></script>
+<script src="../js/hover.js"></script>
+</body>
+
+
+</html>
