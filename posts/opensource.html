@@ -7,26 +7,26 @@
 </head>
 <body>
 
-<h1 id="what-s-the-danger-of-open-source-">The danger in open source</h1>
-<p>In Intel’s central processing units, MINIX 3 is the operating system that runs inside the proprietary  Intel Management System. The MINIX 3 story poses the question: what if your permissively-licensed open source code is used for something evil?</p>
-<h2 id="how-did-this-company-use-the-open-source-code-">How does Intel use open source code?</h2>
-<p>In open source software development, it can be hard to get anyone to use the software you make. When Andrew Tanenbaum developed a self-healing operating system called MINIX, he didn’t immediately see widespread adoption or appreciation for his hard work. He released the third version of the MINIX operating system under the permissive <a href="https://itsfoss.com/fact-intel-minix-case/">Berkeley license</a>.</p>
-<p>When employees from Intel started asking Tanenbaum technical questions about the MINIX operating system, he was happy to <a href="https://itsfoss.com/fact-intel-minix-case/">engage them</a>. Eventually, Intel secretly modified the MINIX operating system for use in Intel CPUs.</p>
-<p>Even though Tanenbaum was grateful for this move, which made MINIX the most widely used operating system in <a href="https://itsfoss.com/fact-intel-minix-case/">the world</a>, he wished Intel had notified him of their intent to modify MINIX for Intel CPUs.</p>
+<h1 id="what-s-the-danger-of-open-source-">Why I no longer use the MIT license for new projects</h1>
+
+<p>What if your open source code is used for something evil? <br><br>It happened to Andrew Tanenbaum. </p>
+
+<h2 id="how-did-this-company-use-the-open-source-code-">What happened to Andrew Tanenbaum?</h2>
+<p>Andrew Tanenbaum released the third version of the MINIX operating system under the permissive <a href="https://itsfoss.com/fact-intel-minix-case/">Berkeley license</a>.</p>
+<p>When employees from Intel started asking Tanenbaum technical questions about the MINIX 3 operating system, he was happy to <a href="https://itsfoss.com/fact-intel-minix-case/">engage them</a>. Eventually, Intel secretly modified the MINIX 3 operating system for use in Intel CPUs.</p>
+
 <h2 id="what-s-wrong-with-this-company-using-open-source-code-">What’s wrong with Intel using open source code?</h2>
+
 <p>On the fifth of May in 2017, Intel released a patch for the Intel CPUs running <a href="https://arstechnica.com/information-technology/2017/05/the-hijacking-flaw-that-lurked-in-intel-chips-is-worse-than-anyone-thought/">MINIX 3</a>. Before this security patch, it was possible for hackers to remotely access computers that had an Intel CPU running MINIX 3 <a href="https://arstechnica.com/information-technology/2017/05/the-hijacking-flaw-that-lurked-in-intel-chips-is-worse-than-anyone-thought/">without a password</a>.</p>
-<p>Intel CPUs run MINIX 3 insidethe Intel Management Engine (ME). Some computers have a Intel Management Engine (ME) which contains an Active Management Technology (AMT) subsystem.</p>
-<p>The AMT exists so that system administrators can remotely fix issues with a computer’s network, screen, and keyboard. The AMT allows a remote administrator - or remote hacker - to use a computer as if they were a <a href="https://arstechnica.com/information-technology/2017/05/the-hijacking-flaw-that-lurked-in-intel-chips-is-worse-than-anyone-thought/">local user</a>.</p>
-<p>The AMT requires remote system administrators to authenticate before beginning a troubleshooting session, but remote access was granted to all who made an attempt at authenticating with the use of any <a href="https://arstechnica.com/information-technology/2017/05/the-hijacking-flaw-that-lurked-in-intel-chips-is-worse-than-anyone-thought/">cryptographic hash</a>.</p>
+
 <h2 id="did-this-company-fix-their-security-problems-">Did Intel fix their security problems?</h2>
-<p>The software engineers at Intel don’t have the same love for open source that Andrew Tanenbaum, the creator of MINIX 3, does. Even though MINIX 3’s permissive open source license paved the way for the Intel Management Engine, Intel has kept the source code for the Intel Management Engine and related <a href="https://www.eff.org/deeplinks/2017/05/intels-management-engine-security-hazard-and-users-need-way-disable-it">subsystems secret</a>.</p>
+
 <p>Although Intel’s CTO Steve Grobman has denied it, Intel’s Management Engine is a <a href="https://www.techrepublic.com/article/is-the-intel-management-engine-a-backdoor/">backdoor by definition</a>. Hackers can bypass normal authentication and access a user’s computer by entering their computer through the ME.</p>
 <p>To date, the sheer number of exploits affecting the ME - six to date - can be used to make the argument that the ME was designed to be exploited, that is, that the ME is a backdoor.</p>
 <p>The Intel Management Engine’s newest exploit - of which there are many - is SA-00086 . Because the Intel Management Engine is more privileged than the operating system, it is actually not possible for a computer affected by this exploit to fix the issue by downloading an <a href="https://www.blackhat.com/eu-17/briefings/schedule/#how-to-hack-a-turned-off-computer-or-running-unsigned-code-in-intel-management-engine-8668">operating system update</a>.</p>
 <h2 id="how-does-the-open-source-code-writer-feel-">How does Andrew Tanenbaum feel?</h2>
 <p>Even in 2017, the creator of MINIX had regrets working with Intel on ME, saying he would not have worked with them on ME if he knew they were building a <a href="https://itsfoss.com/fact-intel-minix-case/">“spy engine”</a>.</p>
 <p>Andrew Tanenbaum seems to regret his decision working with Intel, but most people who permissively license their code find it rewarding. The question remains: to license permissively or not?</p>
-
 
 
 <footer id="editme"></footer>
