@@ -10,7 +10,7 @@
 </head>
 
 <body>
-  <h1>action painting 11</h1>
+  <h1>action painting 12</h1>
   <canvas id='canvas' width='640' height='480'></canvas>
   <video id='video' width='640' height='480' autoplay style='display: none'></video>
   <canvas id='drawing' width='640' height='480'></canvas>
@@ -44,9 +44,9 @@
     // Draw the video element into the canvas
     ctx.drawImage(video, 0, 0, 640, 480);
     // We can call both functions to draw all keypoints and the skeletons
-    drawAction();
     drawKeypoints();
     drawSkeleton();
+    drawAction();
     window.requestAnimationFrame(drawCameraIntoCanvas);
   }
   // Loop over the drawCameraIntoCanvas function
@@ -68,15 +68,17 @@
 
   function drawAction() {
     for (let i = 0; i < poses.length; i += 1) {
+      context.beginPath();
+
       // For each pose detected, loop through all the keypoints
       for (let j = 0; j < poses[i].pose.keypoints.length; j += 1) {
         let keypoint = poses[i].pose.keypoints[j];
         // Only draw an ellipse is the pose probability is bigger than 0.2
         if (keypoint.score > 0.2) {
-          context.moveTo(older[0], older[1]);
+          // context.moveTo(older[0], older[1]);
           context.lineTo(keypoint.position.x, keypoint.position.y);
           context.stroke();
-          older[0] = keypoint.position.x, older[1] = keypoint.position.y;
+          // older[0] = keypoint.position.x, older[1] = keypoint.position.y;
         }
       }
     }
