@@ -72,9 +72,10 @@
       context.beginPath();
       for (let j = 0; j < poses[i].pose.keypoints.length; j += 1) {
         let keypoint = poses[i].pose.keypoints[j];
+        let older = poses[i-1].pose.keypoints[j-1];
         // Only draw an ellipse is the pose probability is bigger than 0.2
-        if (keypoint.score > 0.2) {
-          context.moveTo(keypoint.position.x, keypoint.position.y);
+        if (keypoint.score > 0.2 && older) {
+          context.moveTo(older.position.x, older.position.y);
           context.lineTo(keypoint.position.x, keypoint.position.y);
           context.stroke();
         }
