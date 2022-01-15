@@ -44,7 +44,6 @@
     // Draw the video element into the canvas
     ctx.drawImage(video, 0, 0, 640, 480);
     // We can call both functions to draw all keypoints and the skeletons
-    context.beginPath();
     drawAction();
     drawKeypoints();
     drawSkeleton();
@@ -74,7 +73,7 @@
         let keypoint = poses[i].pose.keypoints[j];
         // Only draw an ellipse is the pose probability is bigger than 0.2
         if (keypoint.score > 0.2) {
-
+          context.beginPath();
           context.lineTo(keypoint.position.x, keypoint.position.y);
           context.stroke();
         }
