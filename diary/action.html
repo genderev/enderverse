@@ -10,7 +10,7 @@
 </head>
 
 <body>
-  <h1>action painting 14</h1>
+  <h1>action painting 15</h1>
   <canvas id='canvas' width='640' height='480'></canvas>
   <video id='video' width='640' height='480' autoplay style='display: none'></video>
   <canvas id='drawing' width='640' height='480'></canvas>
@@ -26,6 +26,7 @@ ml5 Example
 PoseNet using p5.js
 === */
 /* eslint-disable */
+let context = document.getElementById("drawing").getContext("2d");
 
 // Grab elements, create settings, etc.
 var video = document.getElementById("video");
@@ -73,7 +74,6 @@ console.log("model ready");
 poseNet.multiPose(video);
 }
 
-let context = document.getElementById("drawing").getContext("2d");
 let older = [89, 98]
 function drawAction() {
   context.beginPath();
