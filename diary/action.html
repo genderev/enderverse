@@ -67,7 +67,7 @@
     poseNet.multiPose(video);
   }
 
-  let drawAction = () => {
+  function drawAction() {
     for (let i = 0; i < poses.length; i += 1) {
       // For each pose detected, loop through all the keypoints
       for (let j = 0; j < poses[i].pose.keypoints.length; j += 1) {
