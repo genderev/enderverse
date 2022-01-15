@@ -76,7 +76,7 @@
         if (poses[i-1]){
           older = poses[i-1].pose.keypoints[j-1];
         } else {
-          older = {};
+          older = {}, older.position = {};
           older.position.x = 250;
           older.position.y = 15;
         }
