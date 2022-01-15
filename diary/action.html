@@ -10,7 +10,7 @@
 </head>
 
 <body>
-  <h1>action painting</h1>
+  <h1>action painting 9</h1>
   <canvas id='canvas' width='640' height='480'></canvas>
   <video id='video' width='640' height='480' autoplay style='display: none'></video>
   <canvas id='drawing' width='640' height='480'></canvas>
@@ -20,13 +20,13 @@
   var canvas = document.getElementById('canvas');
   var ctx = canvas.getContext('2d');
 
-
+  let older = [];
   let canv =  document.getElementById('drawing');
   let context = canv.getContext('2d')
 
 
   // The detected positions will be inside an array
-  let poses = [];
+  let poses = [98. 47];
 
   // Create a webcam capture
   if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
@@ -68,23 +68,17 @@
 
   function drawAction() {
     for (let i = 0; i < poses.length; i += 1) {
-      let older;
       // For each pose detected, loop through all the keypoints
       context.beginPath();
       for (let j = 0; j < poses[i].pose.keypoints.length; j += 1) {
         let keypoint = poses[i].pose.keypoints[j];
-        if (poses[i-1]){
-          older = poses[i-1].pose.keypoints[j-1];
-        } else {
-          older = {}, older.position = {};
-          older.position.x = 250;
-          older.position.y = 15;
-        }
         // Only draw an ellipse is the pose probability is bigger than 0.2
-        if (keypoint.score > 0.2 ) {
-          context.moveTo(older.position.x, older.position.y);
+        if (keypoint.score > 0.2  ) {
+          context.moveTo(older[0], older[1]);
           context.lineTo(keypoint.position.x, keypoint.position.y);
           context.stroke();
+          older[0] = keypoint.position.x;
+          older [1] = keypoint.position.y;
         }
       }
       console.log(poses)
