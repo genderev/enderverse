@@ -68,7 +68,7 @@
 
   function drawAction() {
     for (let i = 0; i < poses.length; i += 1) {
-      let older = {};
+      let older;
       // For each pose detected, loop through all the keypoints
       context.beginPath();
       for (let j = 0; j < poses[i].pose.keypoints.length; j += 1) {
@@ -76,6 +76,7 @@
         if (poses[i-1]){
           older = poses[i-1].pose.keypoints[j-1];
         } else {
+          older = {};
           older.position.x = 250;
           older.position.y = 15;
         }
