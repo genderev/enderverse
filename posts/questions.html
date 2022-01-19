@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/latex.css">
+    <style>
+      canvas {
+        border: 1px dashed black;
+        width: 100%;
+      }
+
+    </style>
+    <title>Asking questions</title>
+  </head>
+  <body>
+    <header>
+    <h1> Explorable questions </h1>
+
+    <p> I really like <a href="https://explorabl.es"> explorable explanations</a>. I tried making one before, but I soon realized that I have more questions than answers. </p>
+</header>
+
+<main>
+    <h2> Existing questions </h2>
+
+
+    <p> When I have a question, I usually go on r/learnmath or r/learnmachinelearning. Sometimes, I understand the answer and sometimes I don't. </p>
+    <p> If I ask a question on Stack Overflow, the response to my question - if I even get one - is usually berating me for asking the question in the first place. </p>
+    <p> My <strong>goal is to get better answers</strong> from the questions I post online. </p>
+
+    <h2> The best answers </h2>
+
+    The best answers I get online <em>connect what I know to what I don't know</em>.
+<br><br>
+    A related concept: <a href="https://en.wikipedia.org/wiki/Zone_of_proximal_development"> zone of proximal development </a>
+
+<h2> good questions &rarr; good answers </h2>
+<p> In order to get a good answer, I need to post a good question. </p>
+<h3> Question template </h3>
+<label> What do you know?  </label><textarea type="text" min="60"></textarea>
+
+<label> Draw it out: </label>
+<canvas id='known'></canvas>
+<input type="file">
+
+<label> What don't you know?  </label><textarea type="text" min="60" id='done'></textarea>
+<label> Draw it out: </label>
+<canvas id='unknown' ></canvas>
+
+<input type="file">
+
+<button> Ask this question </button>
+
+<h2> Good answers feel familiar </h2>
+<p> Good answers explain the unknown in terms of the known. </p>
+<p> The question answering template: re-use the images and words from before to explain something new. </p>
+<h3> Answer template </h3>
+
+<label> What you know: </label>
+<textarea type="text" min="60" id='redone'></textarea>
+<label> Reframe the question: </label>
+<canvas id-'paste'></canvas>
+<input type="file">
+<em> The question answerer should draw over/edit images submitted by the question asker. </em> <br><br>
+<button> Answer this question </button>
+
+
+<h3> Template improvement ideas </h3>
+<ul>
+<li> Allow users to draw using mouse, face tracking, eye tracking, and keyboard
+<li> Figure out how to label images with accessible text
+</ul>
+</main>
+
+<script src="https://unpkg.com/konva@8/konva.min.js"></script>
+  </body>
+</html>
